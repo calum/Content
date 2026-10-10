@@ -8,6 +8,7 @@
 // - https://youtu.be/QCUMECkwUb0?t=103
 
 [proc,npc_death]
+~relic_on_kill; // relic hook
 // npc_walk(npc_coord) is unnecessary due to npc_setmode(none).
 // But they do it in this screenshot so might be good to do it here just incase: https://i.imgur.com/AfQ1MfF.png
 npc_walk(npc_coord);
