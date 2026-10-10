@@ -52,6 +52,7 @@ if (%pk_skull > 0) { $skulled = true; }
 def_boolean $protecting_item = false;
 if (%prayer8 = ^true) { $protecting_item = true; }
 inv_clear(deathkeep);
+~relic_stash_items; // relic hook
 
 def_obj $currentitem;
 
