@@ -15,7 +15,7 @@ if (npc_stat(hitpoints) = 0) {
     return;
 }
 def_obj $weapon = inv_getobj(worn, ^wearpos_rhand);
-%action_delay = add(map_clock, oc_param($weapon, attackrate));
+%action_delay = add(map_clock, ~relic_delay(oc_param($weapon, attackrate))); // relic hook
 p_opnpc(2);
 switch_obj($weapon) {
     case dragon_dagger, dragon_dagger_p : @pvm_dragon_dagger_sa;
