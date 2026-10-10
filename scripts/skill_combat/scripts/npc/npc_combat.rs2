@@ -425,4 +425,4 @@ if(npc_type = horror_dagganoth_ranged) {
     }
     return (0);
 }
-return (min($maxhit, npc_param(max_dealt)));
+return (~relic_dealt(min($maxhit, npc_param(max_dealt)))); // relic hook
