@@ -25,7 +25,9 @@ if (~wilderness_level(coord) > 30) {
 if (~pre_tele_checks(coord) = false) {
     return;
 }
-mes($message);
+if (~relic_keep_charge = ^false) { // relic hook: no charge message when the charge is kept
+    mes($message);
+}
 switch_int($choice) {
     case 1 : ~player_teleport_normal(0_48_54_15_40);
     case 2 : ~player_teleport_normal(0_45_49_38_40);
