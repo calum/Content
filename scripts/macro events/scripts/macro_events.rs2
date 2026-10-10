@@ -63,6 +63,11 @@ if (~inzone_coord_pair_table(games_room_zones, $coord) = true) { // https://rune
 return(true);
 
 [proc,macro_event_allowed]()(boolean)
+// local change: server-wide switch, see ^macro_events_enabled in configs/macro_events.constant
+def_int $enabled = ^macro_events_enabled;
+if ($enabled = 0) {
+    return(false);
+}
 if (~macro_event_area(coord) = false) {
     return(false);
 }

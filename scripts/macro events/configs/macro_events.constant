@@ -52,3 +52,6 @@
 
 ^members_macro_count = 1
 ^teleport_macro_start = 7
+
+// local change (docs/local-changes.md): 1 = random events on (upstream behaviour), 0 = off. Gates [proc,macro_event_allowed].
+^macro_events_enabled = 0
