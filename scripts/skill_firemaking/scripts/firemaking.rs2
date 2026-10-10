@@ -118,6 +118,7 @@ p_opobj(4);
 
 [proc,firemaking_success](coord $fire_coord, obj $log)
 obj_del;
+~relic_task_burn($log); // relic hook
 stat_advance(firemaking, oc_param($log, productexp));
 sound_synth(fire_lit, 1, 0);
 facesquare($fire_coord);
