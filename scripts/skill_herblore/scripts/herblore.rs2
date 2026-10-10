@@ -11,6 +11,7 @@ stat_advance(herblore, $experience);
 inv_del(inv, $ingredient, 1);
 inv_del(inv, $solvent, 1);
 // There is always a guaranteed slot available.
+~relic_task_obj($mixture); // relic hook
 inv_add(inv, $mixture, 1);
 
 if($mixture = mort_serum3 & %morttonquest = ^mortton_read_diary) {
