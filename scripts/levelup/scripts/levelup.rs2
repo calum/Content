@@ -29,6 +29,7 @@ if ($unlock_row = null) {
 def_int $level = stat_base($stat);
 def_string $message = db_getfield($unlock_row, levelup:message, 0);
 mes($message);
+~relic_levelup_note; // relic hook
 // play the fireworks
 spotanim_pl(levelup_anim, 124, 0);
 // sound_synth(firework, 1, 0); Was an osrs addition apparently
