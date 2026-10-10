@@ -173,7 +173,7 @@ p_delay(1);
 inv_del(inv, $uncooked_item, 1);
 
 if ($passes_roll = true) {
-    inv_add(inv, $cooked_item, 1);
+    ~relic_gathered($cooked_item, 0); // relic hook
     if (compare($succesmessage, "0") ! 0) {
         mes($succesmessage);
     }
