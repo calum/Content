@@ -34,6 +34,10 @@ if (afk_event = ^true) {
 // https://www.neoseeker.com/forums/2410/t960058-useless-rs-facts/2.htm
 // > When you high alch while your cannon is spinning, it stops spinning until you finish alching
 // Also this video: https://www.youtube.com/watch?v=P_o3Cxg73Tg&t=91s
+if (~relic_midas($item) = ^true) { // relic hook
+    weakqueue*(relic_midas, 3)($item); // relic hook
+    return; // relic hook
+} // relic hook
 p_delay(3);
 
 
