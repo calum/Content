@@ -18,6 +18,9 @@ if (~pre_tele_checks(coord) = false) {
     return;
 }
 ~player_teleport_normal(map_findsquare(0_34_77_31_12, 0, 2, ^map_findsquare_lineofwalk));
+if (~relic_keep_charge = ^true) { // relic hook
+    return;
+}
 def_namedobj $new_necklace = oc_param($item, next_obj_stage);
 if ($new_necklace = null) {
     inv_delslot(inv, $slot);
