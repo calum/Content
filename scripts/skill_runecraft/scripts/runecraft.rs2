@@ -95,6 +95,7 @@ inv_del(inv, blankrune, $total_ess);
 stat_advance(runecraft, calc($total_ess * db_getfield($data, runecraft_table:experience, 0)));
 // later revs they just use oc_name($rune), i think after 2007 or so
 mes("You bind the temple's power into <db_getfield($data, runecraft_table:name, 0)> Runes.");
+~relic_task_obj($rune); // relic hook
 inv_add(inv, $rune, calc($total_ess * $rune_count_per_ess));
 p_delay(3);
 
