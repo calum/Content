@@ -3,6 +3,7 @@ if (stat(hitpoints) = 0) {
     return;
 }
 if_close;
+$amount = ~relic_damage_taken($amount); // relic hook
 if ($amount > 0) {
     damage(uid, 1, $amount);
     ~human_hit_sound;
