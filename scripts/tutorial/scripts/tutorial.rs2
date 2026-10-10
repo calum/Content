@@ -328,5 +328,6 @@ inv_add(bank, coins, 25);
 
 ~initalltabs;
 ~update_all(inv_getobj(worn, ^wearpos_rhand));
+~relic_first_offer; // relic hook
 
 session_log(^log_adventure, "Completed tutorial island");
