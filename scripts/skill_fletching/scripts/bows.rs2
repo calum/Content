@@ -39,4 +39,8 @@ inv_del(inv, bow_string, 1);
 mes("You add a string to the bow.");
 
 stat_advance(fletching, db_getfield($data, fletching_table:experience, 0));
+def_namedobj $relic_bow; // relic hook
+def_int $relic_n; // relic hook
+$relic_bow, $relic_n = db_getfield($data, fletching_table:product, 0); // relic hook
+~relic_task_obj($relic_bow); // relic hook
 inv_add(inv, db_getfield($data, fletching_table:product, 0));
