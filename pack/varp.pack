@@ -363,3 +363,6 @@
 362=relic_xp_tier
 363=relic_xp_factor
 364=relic_tasks_done
+365=relic_declined
+366=relic_started
+367=relic_pending
