@@ -22,6 +22,7 @@ anim(human_pickpocket, 0);
 stat_advance(thieving, $experience);
 sound_synth(pick, 1, 0);
 mes("You pick the <$pocket>.");
+~relic_task_pickpocket; // relic hook
 
 [proc,check_if_success_pick_pocket](dbrow $data)(boolean)
 return(stat_random(thieving, db_getfield($data, pickpocket:success_chance, 0)));
