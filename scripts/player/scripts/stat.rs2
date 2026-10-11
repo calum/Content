@@ -48,7 +48,7 @@ while ($i <= enum_getoutputcount(stats)) {
     def_stat $stat = enum(int, stat, stats, $i);
     def_int $base_level = stat_base($stat);
     def_int $level = stat($stat);
-    if ($base_level < $level & $stat ! prayer & $stat ! hitpoints) {
+    if ($base_level < $level & $stat ! prayer & $stat ! hitpoints & ~relic_boost_stays = 0) { // relic hook
         stat_sub($stat, 1, 0);
     }
 
