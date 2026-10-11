@@ -277,6 +277,7 @@ def_int $product_amount = db_getfield($data,smithing:product_amount,0);
 // delete bars
 inv_del(inv, $bar, $bar_amount);
 // add product
+~relic_task_obj($product); // relic hook
 inv_add(inv, $product, $product_amount);
 // add smithing xp
 def_struct $struct = oc_param($bar, smithing_anvil_struct);
