@@ -73,7 +73,7 @@ if (~relic_stall_keeps = true) { // relic hook: the stall does not empty, steal 
     ~stealing_check_for_reward($data);
     stat_advance(thieving, $experience);
     ~relic_task_steal;
-    p_oploc(2);
+    ~relic_stall_again;
     return;
 }
 switch_loc (loc_type) {
