@@ -121,6 +121,9 @@ switch_category(oc_category($rhand)) {
 return($delay);
 
 [proc,ranged_dropammo_npc](obj $ammo, int $delay)
+if (~relic_keep_ammo = ^true) { // relic hook
+    return;
+}
 if($ammo = holy_water) {
     ~ranged_dropammo_holywater(npc_coord, $delay);
     return;
