@@ -139,8 +139,8 @@ if (random($chance) = ^true) {
     if(inzone(^crest_perfect_mine_lower_bound, ^crest_perfect_mine_upper_bound, coord) = true) {
         $output = perfect_gold_ore;
     }
-    ~relic_gathered($output, 10); // relic hook
-    stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
+    def_int $relic_n = ~relic_gathered($output, 10); // relic hook (returns how many ore: 2 with Double Yield)
+    stat_advance(mining, multiply(db_getfield($data, mining_table:rock_exp, 0), $relic_n));
     mes("You manage to mine some <db_getfield($data, mining_table:ore_name, 0)>.");
     ~relic_mine_again; // relic hook: Eternal Vein keeps the rock, so keep mining it
     return;
@@ -177,8 +177,8 @@ if (random($chance) = ^true) {
     ~relic_loc_change(loc_param(next_loc_stage_mining), $respawn); // relic hook
     sound_synth(mine, 1, 0); // Sudden says its mine
     anim(null, 0);
-    ~relic_gathered(db_getfield($data, mining_table:rock_output, 0), 10); // relic hook
-    stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
+    def_int $relic_n = ~relic_gathered(db_getfield($data, mining_table:rock_output, 0), 10); // relic hook (returns how many ore: 2 with Double Yield)
+    stat_advance(mining, multiply(db_getfield($data, mining_table:rock_exp, 0), $relic_n));
     mes("You manage to mine some <db_getfield($data, mining_table:ore_name, 0)>.");
     ~relic_mine_again; // relic hook: Eternal Vein keeps the rock, so keep mining it
     return;

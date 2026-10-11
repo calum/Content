@@ -49,8 +49,8 @@ if ($fish2 ! null) {
         if ($bait ! null) {
             inv_del(inv, $bait, 1);
         }
-        ~relic_gathered($fish2, 0); // relic hook
-        stat_advance(fishing, struct_param($struct2, productexp));
+        def_int $relic_n2 = ~relic_fished($fish2); // relic hook (fish count: 2 with Double Yield)
+        stat_advance(fishing, multiply(struct_param($struct2, productexp), $relic_n2));
         mes(struct_param($struct2, productmessage));
         return;
     }
@@ -62,8 +62,8 @@ if ($fish1 ! null) {
         if ($bait ! null) {
             inv_del(inv, $bait, 1);
         }
-        ~relic_gathered($fish1, 0); // relic hook
-        stat_advance(fishing, struct_param($struct1, productexp));
+        def_int $relic_n1 = ~relic_fished($fish1); // relic hook (fish count: 2 with Double Yield)
+        stat_advance(fishing, multiply(struct_param($struct1, productexp), $relic_n1));
         mes(struct_param($struct1, productmessage));
         return;
     }
@@ -78,8 +78,8 @@ if ($fish2 ! null) { // if fish2 isnt null and roll for 2nd fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
-        ~relic_gathered($fish2, 0); // relic hook
-        stat_advance(fishing, struct_param($struct2, productexp));
+        def_int $relic_n2 = ~relic_fished($fish2); // relic hook (fish count: 2 with Double Yield)
+        stat_advance(fishing, multiply(struct_param($struct2, productexp), $relic_n2));
         mes(struct_param($struct2, productmessage));
         return;
     }
@@ -92,8 +92,8 @@ if ($fish1 ! null) { // else if fish1 isnt null and roll for 1st fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
-        ~relic_gathered($fish1, 0); // relic hook
-        stat_advance(fishing, struct_param($struct1, productexp));
+        def_int $relic_n1 = ~relic_fished($fish1); // relic hook (fish count: 2 with Double Yield)
+        stat_advance(fishing, multiply(struct_param($struct1, productexp), $relic_n1));
         mes(struct_param($struct1, productmessage));
     }
 }
