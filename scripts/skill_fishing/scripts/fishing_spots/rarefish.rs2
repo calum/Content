@@ -31,7 +31,7 @@ if (~check_fish_equipment(lobster_pot) = false) {
 }
 
 // check if inv is full
-if (inv_freespace(inv) < 1) {
+if (inv_freespace(inv) < 1 & ~relic_has(27) = 0) { // relic hook
     anim(null, 0);
     ~mesbox("You can't carry any more Lobsters."); // https://www.youtube.com/watch?t=436&v=RDx7HdaJkMo
     return;
@@ -67,13 +67,13 @@ if (~check_fish_equipment(lobster_pot) = false) {
     return;
 }
 // check if inv is full again
-if (inv_freespace(inv) < 1) {
+if (inv_freespace(inv) < 1 & ~relic_has(27) = 0) { // relic hook
     anim(null, 0);
     ~mesbox("You can't carry any more Lobsters."); // https://www.youtube.com/watch?t=436&v=RDx7HdaJkMo
     return;
 }
 if (%action_delay < map_clock) {
-    %action_delay = calc(map_clock + 5);
+    %action_delay = calc(map_clock + ~relic_gather_delay(5)); // relic hook
 } else if (%action_delay = map_clock) {
     anim(human_lobster, 0);
     ~fish_roll(raw_lobster, null, lobster_pot, null);
@@ -94,7 +94,7 @@ if (~check_fish_equipment(harpoon) = false) {
     return;
 }
 // check if inv is full
-if (inv_freespace(inv) < 1) {
+if (inv_freespace(inv) < 1 & ~relic_has(27) = 0) { // relic hook
     anim(null, 0);
     ~mesbox("You can't carry any more fish.");
     return;
@@ -133,13 +133,13 @@ if (~check_fish_equipment(harpoon) = false) {
     return;
 }
 // check if inv is full again
-if (inv_freespace(inv) < 1) {
+if (inv_freespace(inv) < 1 & ~relic_has(27) = 0) { // relic hook
     anim(null, 0);
     ~mesbox("You can't carry any more fish.");
     return;
 }
 if (%action_delay < map_clock) {
-    %action_delay = calc(map_clock + 5);
+    %action_delay = calc(map_clock + ~relic_gather_delay(5)); // relic hook
 } else if (%action_delay = map_clock) {
     anim(human_harpoon, 0);
     if (stat(fishing) >= 50) {

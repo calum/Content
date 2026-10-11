@@ -6,6 +6,10 @@
 [ai_timer,_slimeyfish] @move_fishing_spot;
 
 [label,move_fishing_spot]
+if (~relic_spot_held(npc_coord) = 1) { // relic hook: Endless Shoal
+    npc_settimer(calc(280 + random(250)));
+    return;
+}
 def_coord $rand_coord = ~fishing_spot_random_coord(npc_type);
 npc_delay(2);
 npc_tele($rand_coord);
