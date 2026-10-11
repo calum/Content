@@ -33,7 +33,7 @@ if ($ammo = null) {
 // check hit, give combat xp
 def_int $damage = 0;
 if (~player_npc_hit_roll(%damagetype) = true) {
-    def_int $maxhit = %com_maxhit;
+    def_int $maxhit = ~relic_ranged_maxhit(%com_maxhit); // relic hook
     if (npc_type = count_draynor & inv_total(inv, garlic) > 0) {
         $maxhit = add($maxhit, 1);
     }
