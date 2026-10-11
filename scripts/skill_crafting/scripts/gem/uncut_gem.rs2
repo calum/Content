@@ -59,6 +59,7 @@ if ($low ! null & $high ! null & stat_random(crafting, $low, $high) = false) {
 }
 
 mes("You cut the <$product_name>.");
+~relic_task_obj($cut_gem); // relic hook
 inv_add(inv, $cut_gem, 1);
 stat_advance(crafting, db_getfield($data, gem_cutting_table:experience, 0));
 //-----------------------

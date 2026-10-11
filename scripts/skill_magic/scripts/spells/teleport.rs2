@@ -46,6 +46,7 @@ if (p_finduid(uid) = true) {
     // delete runes and give xp
     ~delete_spell_runes($spell_data);
     ~give_spell_xp($spell_data);
+    ~relic_task_spell($spell); // relic hook
     // give additional affects
     // teleport player. Always a radius of 2
     ~player_teleport_normal(map_findsquare(db_getfield($spell_data, magic_spell_table:tele_coord, 0), 0, 2, ^map_findsquare_lineofwalk));

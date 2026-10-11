@@ -160,6 +160,7 @@ if (inv_total(inv, $leather) < $leather_count) {
     return;
 }
 inv_del(inv, $leather, $leather_count);
+~relic_task_obj($product); // relic hook
 inv_add(inv, $product, 1);
 stat_advance(crafting, db_getfield($product_data, craft_leather_table:productexp, 0));
 mes("You make <db_getfield($product_data, craft_leather_table:name, 0)>.");

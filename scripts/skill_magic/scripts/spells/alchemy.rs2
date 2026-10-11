@@ -24,6 +24,7 @@ spotanim_pl(highlvlalchemy_casting, 92, 0);
 // give 0.6x of item's value and delete item
 def_int $profit = ~relic_alch_profit(max(scale(6, 10, oc_cost($item)), 1)); // relic hook
 wealth_event(^wealth_high_alch, oc_debugname($item), 1, $profit);
+~relic_task_spell($spell); // relic hook
 inv_del(inv, $item, 1);
 inv_add(inv, coins, $profit);
 // delay by 5 ticks
