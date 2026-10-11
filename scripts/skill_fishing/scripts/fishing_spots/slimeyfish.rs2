@@ -18,7 +18,7 @@ if (stat(fishing) < 28) {
 if (~check_fish_equipment(fishing_rod) = false) {
     return;
 }
-if (inv_freespace(inv) < 1 & inv_total(inv, fishing_bait) > 1) {
+if (inv_freespace(inv) < 1 & ~relic_has(27) = 0 & inv_total(inv, fishing_bait) > 1) {
     anim(null, 0);
     ~mesbox("You can't carry any more fish.");
     return;
@@ -55,13 +55,13 @@ if (~check_fish_equipment(fishing_rod) = false) {
     return;
 }
 // check if inv is full
-if (inv_freespace(inv) < 1 & inv_total(inv, fishing_bait) > 1) {
+if (inv_freespace(inv) < 1 & ~relic_has(27) = 0 & inv_total(inv, fishing_bait) > 1) {
     anim(null, 0);
     ~mesbox("You can't carry any more fish.");
     return;
 }
 if (%action_delay < map_clock) {
-    %action_delay = calc(map_clock + 4);
+    %action_delay = calc(map_clock + ~relic_gather_delay(4)); // relic hook
 } else if (%action_delay = map_clock) {
     anim(human_fish_onspot, 0);
     ~fish_roll(mort_slimey_eel, null, fishing_rod, fishing_bait);
