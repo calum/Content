@@ -184,6 +184,8 @@ if (db_getfieldcount($spell_data, magic_spell_table:spotanim_proj) > 0) {
 // crumble undead continues autocast for some reason
 if (~player_autocast_enabled = true & db_getfield($spell_data, magic_spell_table:continue_by_autocast, 0) = true) {
     p_opnpct(db_getfield(~get_spell_data(%autocast_spell), magic_spell_table:spellcom, 0));
+} else if (~relic_keep_casting($spell_data) = true) { // relic hook
+    p_opnpct(db_getfield($spell_data, magic_spell_table:spellcom, 0)); // relic hook
 }
 return($duration);
 
