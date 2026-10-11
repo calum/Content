@@ -21,7 +21,10 @@ mes("Oh dear you are dead!");
 clearqueue(player_death);
 
 def_obj $prev_wep = inv_getobj(worn, ^wearpos_rhand);
-if (findhero = true) {
+def_boolean $bonus = ~relic_bonus_death; // relic hook: bonus boss fight in the KBD lair, keep everything
+if ($bonus = true) {
+    session_log(^log_moderator, "Player died in the relic bonus fight");
+} else if (findhero = true) {
     ~pvp_death_lose_items;
     session_log(^log_moderator, "Player died to <.displayname>");
 } else {
@@ -29,7 +32,11 @@ if (findhero = true) {
     // todo: what npc killed the player
     session_log(^log_moderator, "Player died");
 }
-p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
+if ($bonus = true) {
+    p_teleport(0_47_160_59_14); // the lever outside the KBD lair
+} else {
+    p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
+}
 buildappearance(worn);
 ~prayer_deactivate_all;
 ~follower_death;
