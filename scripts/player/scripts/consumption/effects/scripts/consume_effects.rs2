@@ -72,6 +72,7 @@ while ($i < db_getfieldcount($effect_data, consume_table:stat_heal)) {
     stat_heal(db_getfield($effect_data, consume_table:stat_heal, $i));
     $i = calc($i + 1);
 }
+~relic_fellowship_heal($hitpoints); // relic hook
 if (db_getfieldcount($effect_data, consume_table:healenergy) > 0) {
     healenergy(db_getfield($effect_data, consume_table:healenergy, 0));
 }
