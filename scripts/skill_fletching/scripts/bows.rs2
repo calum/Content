@@ -44,3 +44,4 @@ def_int $relic_n; // relic hook
 $relic_bow, $relic_n = db_getfield($data, fletching_table:product, 0); // relic hook
 ~relic_task_obj($relic_bow); // relic hook
 inv_add(inv, db_getfield($data, fletching_table:product, 0));
+~relic_fletch_echo($relic_bow, $relic_n, db_getfield($data, fletching_table:experience, 0)); // relic hook

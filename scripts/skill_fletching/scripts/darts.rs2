@@ -60,3 +60,4 @@ if ($darts_count > 1) {
 }
 stat_advance(fletching, multiply($darts_count, db_getfield($data, fletching_table:experience, 0)));
 inv_add(inv, $product, $darts_count);
+~relic_fletch_echo($product, $darts_count, multiply($darts_count, db_getfield($data, fletching_table:experience, 0))); // relic hook
