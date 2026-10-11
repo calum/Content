@@ -62,6 +62,9 @@ return(false);
 
 // returns the correct combat calculated attack damage for weapon
 [proc,player_attack_roll_specific](int $damagetype)(int)
+return(~relic_accuracy(~player_attack_roll_base($damagetype))); // relic hook
+
+[proc,player_attack_roll_base](int $damagetype)(int)
 switch_int ($damagetype) {
     case ^stab_style : return(%com_stabattack);
     case ^slash_style : return(%com_slashattack);
