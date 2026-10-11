@@ -32,6 +32,7 @@ mes($message);
 // local change: the new level goes in the chat box too, so it is not missed when no dialog opens
 mes("<db_getfield($unlock_row, levelup:level_prefix, 0)> <tostring($level)>.");
 ~relic_levelup_note; // relic hook
+~relic_level99($level); // relic hook
 // play the fireworks
 spotanim_pl(levelup_anim, 124, 0);
 // sound_synth(firework, 1, 0); Was an osrs addition apparently
