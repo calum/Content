@@ -52,7 +52,7 @@ if ($pickaxe = null) {
     ~mesbox("You need a Pickaxe to mine this rock. You do not have a Pickaxe which you have the Mining level to use.");
     return;
 }
-def_int $mining_rate = oc_param($pickaxe, mining_rate);
+def_int $mining_rate = ~relic_gather_delay(oc_param($pickaxe, mining_rate)); // relic hook
 if (%action_delay < map_clock) {
     %action_delay = calc(map_clock + $mining_rate);
     p_oploc(1);
@@ -89,7 +89,7 @@ if ($pickaxe = null) {
     ~mesbox("You need a Pickaxe to mine this rock. You do not have a Pickaxe which you have the Mining level to use.");
     return;
 }
-def_int $mining_rate = oc_param($pickaxe, mining_rate);
+def_int $mining_rate = ~relic_gather_delay(oc_param($pickaxe, mining_rate)); // relic hook
 
 // sounds and skill anim is based off https://youtu.be/ix4_VVi9Xm4
 sound_synth(mine_quick, 1, 0);
