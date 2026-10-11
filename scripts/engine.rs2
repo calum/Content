@@ -571,6 +571,8 @@
 [command,.npc_findexact](coord $coord, npc $npc)(boolean)
 // info: Return true if the player that has dealt the most damage to this npc is in the world
 [command,npc_findhero]()(int)
+// info: Relic mode (custom): like npc_findhero, but for the player at damage rank $rank (0 = most damage). False for an empty rank or an offline player
+[command,npc_findheroat](int $rank)(boolean)
 // info: Get a param on the current npc
 [command,npc_param](param $param)(any)
 // info: Queue a script on a npc
