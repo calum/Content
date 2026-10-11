@@ -11,6 +11,7 @@ p_telejump(map_findsquare(db_getfield($data, runecraft_table:exit_coord, random(
 [oplocu,_rc_altar]
 switch_obj(last_useitem) {
     case blankrune : @runecraft_runes;
+    case relic_essence_bundle : ~relic_wellspring_craft; // relic hook
     case default : ~displaymessage(^dm_default);
 }
 
@@ -101,6 +102,9 @@ p_delay(3);
 
 
 [opheld4,_talismans]
+if (~relic_wellspring_talisman = ^true) { // relic hook
+    return;
+}
 def_obj $last_item = last_item;
 def_dbrow $data = ~get_runecraft_data(oc_param($last_item, rune_type));
 if ($data = null) {
@@ -121,6 +125,9 @@ if ($last_item = db_getfield($data, runecraft_table:talisman, 0)) {
 }
 
 [opheld4,cosmic_talisman]
+if (~relic_wellspring_talisman = ^true) { // relic hook
+    return;
+}
 def_obj $last_item = last_item;
 def_dbrow $data = ~get_runecraft_data(oc_param($last_item, rune_type));
 if ($data = null) {
