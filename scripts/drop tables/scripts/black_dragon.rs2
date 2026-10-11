@@ -6,7 +6,7 @@ if (npc_findhero = ^false) {
 
 // Default drop from config.
 obj_add(npc_coord, npc_param(death_drop), 1, ^lootdrop_duration);
-obj_add(npc_coord, dragonhide_black, 1, ^lootdrop_duration);
+~relic_drop_hide(dragonhide_black, dragon_leather_black); // relic hook
 
 // Tertiary
 ~trail_hardcluedrop(128, npc_coord);
