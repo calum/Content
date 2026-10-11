@@ -29,6 +29,8 @@ if ($unlock_row = null) {
 def_int $level = stat_base($stat);
 def_string $message = db_getfield($unlock_row, levelup:message, 0);
 mes($message);
+// local change: the new level goes in the chat box too, so it is not missed when no dialog opens
+mes("<db_getfield($unlock_row, levelup:level_prefix, 0)> <tostring($level)>.");
 ~relic_levelup_note; // relic hook
 // play the fireworks
 spotanim_pl(levelup_anim, 124, 0);
@@ -49,6 +51,11 @@ if ($has_unlocks = false) {
     $jingle = db_getfield($unlock_row, levelup:unlocks_jingle, 0);
 }
 ~music_jingle($jingle);
+// local change: the dialog (and the unlock box after it) takes the chat box and interrupts the current action, so it is off by default
+def_int $dialogs = ^levelup_dialogs;
+if ($dialogs = 0) {
+    return;
+}
 // the level up dialogue box
 if_settext(db_getfield($unlock_row, levelup:title, 0), "@dbl@<$message>");
 if_settext(db_getfield($unlock_row, levelup:body, 0), "<db_getfield($unlock_row, levelup:level_prefix, 0)> <tostring($level)>.");

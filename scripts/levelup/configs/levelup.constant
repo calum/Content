@@ -1,0 +1,2 @@
+// 1 = open the blocking level-up chat dialog (and the unlock box) like the original game; 0 = chat message, fireworks and jingle only.
+^levelup_dialogs = 0
