@@ -56,10 +56,12 @@ walktrigger(stunned);
 [proc,steal_from_stall](dbrow $data, coord $loc_coord, int $loc_angle, locshape $loc_shape)
 // if guard sees (for first time), stop player from stealing.
 // guards proioritize over sellers
-if (~stealing_check_for_guard($data) = true) {
-    return;
-} else if (~stealing_check_for_owner($data) = true) {
-   return;
+if (~relic_stall_keeps = false) { // relic hook: Light Fingers is never seen
+    if (~stealing_check_for_guard($data) = true) {
+        return;
+    } else if (~stealing_check_for_owner($data) = true) {
+       return;
+    }
 }
 p_arrivedelay;
 def_int $experience = db_getfield($data, stealing:experience, 0);
