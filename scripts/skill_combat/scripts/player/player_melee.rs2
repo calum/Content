@@ -51,9 +51,9 @@ if (npc_param(defend_sound) ! null) {
 }
 // set the skill clock depending on the weapon attack rate
 if ($weapon = null) {
-    %action_delay = add(map_clock, ~relic_delay(4)); // relic hook
+    %action_delay = add(map_clock, ~relic_delay_melee(4)); // relic hook
 } else {
-    %action_delay = add(map_clock, ~relic_delay(oc_param($weapon, attackrate))); // relic hook
+    %action_delay = add(map_clock, ~relic_delay_melee(oc_param($weapon, attackrate))); // relic hook
 }
 
 p_opnpc(2);
