@@ -573,6 +573,10 @@
 [command,npc_findhero]()(int)
 // info: Relic mode (custom): like npc_findhero, but for the player at damage rank $rank (0 = most damage). False for an empty rank or an offline player
 [command,npc_findheroat](int $rank)(boolean)
+// info: Regroup (custom): the uid of the $index-th (0-based) signed-in player in slot order, for finduid. -1 when there is no such player
+[command,world_playeruid](int $index)(player_uid)
+// info: Regroup (custom): a player_uid as a plain int
+[command,uid_toint](player_uid $uid)(int)
 // info: Get a param on the current npc
 [command,npc_param](param $param)(any)
 // info: Queue a script on a npc
