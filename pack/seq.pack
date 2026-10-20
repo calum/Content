@@ -1400,3 +1400,9 @@
 1399=tw_burst
 1400=tw_surge
 1401=tw_death
+1402=tw_fx_pop
+1403=tw_fx_spawn
+1404=tw_fx_flare
+1405=tw_fx_wave
+1406=tw_fx_cast
+1407=tw_fx_pulse
