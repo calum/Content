@@ -577,6 +577,10 @@
 [command,world_playeruid](int $index)(player_uid)
 // info: Regroup (custom): a player_uid as a plain int
 [command,uid_toint](player_uid $uid)(int)
+// info: Custom: a world-wide int flag shared by every player, saved in data/world-flags.json. 0 when never set
+[command,world_flag_get](int $id)(int)
+// info: Custom: set a world-wide int flag (saved at once); setting 0 clears it
+[command,world_flag_set](int $id, int $value)
 // info: Get a param on the current npc
 [command,npc_param](param $param)(any)
 // info: Queue a script on a npc
