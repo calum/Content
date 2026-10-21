@@ -389,3 +389,6 @@
 388=ma_pray_tick
 389=tw_last_cause
 390=tw_rune_tick
+391=cm_last_cause
+392=cm_hit_tick
+393=cm_last_plate

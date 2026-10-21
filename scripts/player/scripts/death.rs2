@@ -23,7 +23,8 @@ clearqueue(player_death);
 def_obj $prev_wep = inv_getobj(worn, ^wearpos_rhand);
 def_boolean $bonus = ~relic_bonus_death; // relic hook: bonus boss fight in the KBD lair, keep everything
 def_boolean $vault = ~warden_death; // tidebound hook: died in the Drowned Vault, keep everything
-if ($bonus = true | $vault = true) {
+def_boolean $caldera = ~cindermaw_death; // cindermaw hook: died in the Ashfall Caldera, keep everything
+if ($bonus = true | $vault = true | $caldera = true) {
     session_log(^log_moderator, "Player died in the relic bonus fight");
 } else if (findhero = true) {
     ~pvp_death_lose_items;
@@ -37,6 +38,8 @@ if ($bonus = true) {
     p_teleport(0_47_160_59_14); // the lever outside the KBD lair
 } else if ($vault = true) {
     p_teleport(^tw_entry); // tidebound hook: the Drowned Vault entry platform
+} else if ($caldera = true) {
+    p_teleport(^cm_entry); // cindermaw hook: the Ashfall Caldera landing
 } else {
     p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
 }
