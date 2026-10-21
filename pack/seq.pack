@@ -1422,3 +1422,17 @@
 1421=cm_fx_wave
 1422=cm_fx_cast
 1423=cm_fx_pulse
+1424=hc_idle
+1425=hc_dormant
+1426=hc_wake
+1427=hc_toll_cast
+1428=hc_dirge_cast
+1429=hc_knell_cast
+1430=hc_hurt
+1431=hc_death
+1432=hc_fx_pop
+1433=hc_fx_spawn
+1434=hc_fx_flare
+1435=hc_fx_wave
+1436=hc_fx_cast
+1437=hc_fx_pulse
