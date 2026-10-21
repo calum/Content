@@ -14,6 +14,11 @@ if (%option_brightness = 0) {
 
 minimap_toggle(0); // always reset on login (osrs)
 
+// custom: run is on by default at every login (Tutorial Island still teaches the toggle first)
+if (%tutorial >= ^tutorial_complete & runenergy >= 100) {
+    p_run(^player_run_on);
+}
+
 if(~wilderness_level(coord) > 0) {
     set_player_op("Attack", 2, ^false);
 

@@ -597,6 +597,20 @@ shadowed=yes
 text=Off
 colour=0xFFFF00
 
+[keybinds]
+type=text
+x=144
+y=138
+buttontype=normal
+width=44
+height=14
+center=yes
+font=p12_full
+shadowed=yes
+text=Keys
+colour=0xFF981F
+overcolour=0xFFFFFF
+
 [relic_tasks]
 type=text
 x=144
