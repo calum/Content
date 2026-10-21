@@ -33,6 +33,7 @@ if (p_finduid(uid) = true) {
         mes("You don't have enough free space to do that.");
         return;
     }
+    ~relic_on_equip($obj); // relic hook
     // todo: this needs a better home...
     if (~in_tutorial_island(coord) = true & %tutorial = ^newbie_combat_instructor_unequipping_items) {
         def_obj $shield = inv_getobj(worn, ^wearpos_lhand);
