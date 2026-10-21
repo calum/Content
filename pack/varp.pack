@@ -407,8 +407,11 @@
 406=sk_last_cause
 407=tm_last_cause
 408=inferno_spike_land
-409=relic_owned2
-410=relic_drawn2
-411=relic_secret_kills
+409=inferno_state
+410=inferno_assigned
+411=inferno_probe
 412=raid_stage
 413=raid_clears
+414=relic_owned2
+415=relic_drawn2
+416=relic_secret_kills
