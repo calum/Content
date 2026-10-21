@@ -351,3 +351,17 @@
 350=jad_gfx_ball3
 351=jad_gfx_range
 352=jad_gfx_heal
+353=sk_gfx_orb
+354=sk_gfx_claw
+355=sk_gfx_hit_frost
+356=sk_gfx_hit_fang
+357=sk_gfx_hit_gaze
+358=sk_gfx_beam_skarn
+359=sk_gfx_beam_hoar
+360=sk_gfx_beam_rime
+361=sk_gfx_seen
+362=sk_gfx_dazzle
+363=sk_gfx_shatter
+364=sk_gfx_wake
+365=sk_gfx_split
+366=sk_gfx_refreeze

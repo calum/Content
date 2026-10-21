@@ -26,7 +26,8 @@ def_boolean $vault = ~warden_death; // tidebound hook: died in the Drowned Vault
 def_boolean $caldera = ~cindermaw_death; // cindermaw hook: died in the Ashfall Caldera, keep everything
 def_boolean $undercroft = ~hollowchoir_death; // hollow choir hook: died in the Undercroft of Saint Orrin, keep everything
 def_boolean $jad = ~jad_death; // jad hook: died in TzHaar-Ket-Rak's challenge, keep everything
-if ($bonus = true | $vault = true | $caldera = true | $undercroft = true | $jad = true) {
+def_boolean $mirrormere = ~skarn_death; // skarn hook: died on the frozen Mirrormere, keep everything
+if ($bonus = true | $vault = true | $caldera = true | $undercroft = true | $jad = true | $mirrormere = true) {
     session_log(^log_moderator, "Player died in the relic bonus fight");
 } else if (findhero = true) {
     ~pvp_death_lose_items;
@@ -46,6 +47,8 @@ if ($bonus = true) {
     p_teleport(^hc_entry); // hollow choir hook: the Undercroft stair landing
 } else if ($jad = true) {
     p_teleport(^jad_lobby); // jad hook: Ket-Rak's lobby
+} else if ($mirrormere = true) {
+    p_teleport(^sk_entry); // skarn hook: the Mirrormere landing
 } else {
     p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
 }
