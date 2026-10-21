@@ -407,3 +407,6 @@
 406=sk_last_cause
 407=tm_last_cause
 408=inferno_spike_land
+409=inferno_state
+410=inferno_assigned
+411=inferno_probe
