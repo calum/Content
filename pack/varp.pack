@@ -393,3 +393,14 @@
 392=cm_hit_tick
 393=cm_last_plate
 394=hc_last_cause
+395=jad_current
+396=jad_clock
+397=jad_best1
+398=jad_best2
+399=jad_best3
+400=jad_best4
+401=jad_best5
+402=jad_best6
+403=jad_best7
+404=jad_last_cause
+405=jad_kills

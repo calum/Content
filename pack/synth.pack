@@ -926,3 +926,11 @@
 925=hc_stage
 926=hc_death
 927=hc_ambient
+928=jad_fire_start
+929=jad_fire_fly
+930=jad_fire_hit
+931=jad_hurt
+932=jad_roar
+933=jad_death
+934=jad_heal
+935=jad_challenge_start
