@@ -33,6 +33,7 @@ if (gettimer(prayer_drain) < 1) {
     settimer(prayer_drain, 5);
 }
 %prayer_drain_effect = add(max(%prayer_drain_effect, 0), enum(int, int, prayer_drain_effects, db_getfield($data, prayers:prayer, 0)));
+~ma_prayer_hook(db_getfield($data, prayers:prayer, 0)); // mad angel hook (mods/madangel)
 
 ~player_combat_stat; // THIS IS VERY IMPORTANT
 

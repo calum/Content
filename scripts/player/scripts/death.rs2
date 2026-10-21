@@ -22,7 +22,13 @@ clearqueue(player_death);
 
 def_obj $prev_wep = inv_getobj(worn, ^wearpos_rhand);
 def_boolean $bonus = ~relic_bonus_death; // relic hook: bonus boss fight in the KBD lair, keep everything
-if ($bonus = true) {
+def_boolean $vault = ~warden_death; // tidebound hook: died in the Drowned Vault, keep everything
+def_boolean $caldera = ~cindermaw_death; // cindermaw hook: died in the Ashfall Caldera, keep everything
+def_boolean $undercroft = ~hollowchoir_death; // hollow choir hook: died in the Undercroft of Saint Orrin, keep everything
+def_boolean $jad = ~jad_death; // jad hook: died in TzHaar-Ket-Rak's challenge, keep everything
+def_boolean $mirrormere = ~skarn_death; // skarn hook: died on the frozen Mirrormere, keep everything
+def_boolean $grove = ~thornmother_death; // thornmother hook: died in the Hollowroot Grove, keep everything
+if ($bonus = true | $vault = true | $caldera = true | $undercroft = true | $jad = true | $mirrormere = true | $grove = true) {
     session_log(^log_moderator, "Player died in the relic bonus fight");
 } else if (findhero = true) {
     ~pvp_death_lose_items;
@@ -34,6 +40,18 @@ if ($bonus = true) {
 }
 if ($bonus = true) {
     p_teleport(0_47_160_59_14); // the lever outside the KBD lair
+} else if ($vault = true) {
+    p_teleport(^tw_entry); // tidebound hook: the Drowned Vault entry platform
+} else if ($caldera = true) {
+    p_teleport(^cm_entry); // cindermaw hook: the Ashfall Caldera landing
+} else if ($undercroft = true) {
+    p_teleport(^hc_entry); // hollow choir hook: the Undercroft stair landing
+} else if ($jad = true) {
+    p_teleport(^jad_lobby); // jad hook: Ket-Rak's lobby
+} else if ($mirrormere = true) {
+    p_teleport(^sk_entry); // skarn hook: the Mirrormere landing
+} else if ($grove = true) {
+    p_teleport(^tm_entry); // thornmother hook: the Hollowroot Grove landing
 } else {
     p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
 }

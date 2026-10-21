@@ -46,6 +46,9 @@ if (~player_autocast_enabled = true) {
 @player_melee_attack;
 
 [proc,player_npc_hit_roll](int $damagetype)(boolean)
+if (~ma_enhanced_accuracy = true) { // mad angel hook (mods/madangel)
+    return(true);
+}
 def_int $attack_roll = ~player_attack_roll_specific($damagetype);
 def_int $defence_roll = ~npc_defence_roll_specific($damagetype);
 def_obj $weapon = inv_getobj(worn, ^wearpos_rhand);
